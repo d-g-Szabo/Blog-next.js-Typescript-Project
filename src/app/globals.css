@@ -26,6 +26,12 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+form select,
+form input,
+form textarea {
+  color: rgb(var(--background-start-rgb));
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
