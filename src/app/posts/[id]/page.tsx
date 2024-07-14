@@ -6,6 +6,19 @@ import Post from "@/components/Post";
 import CommentsSection from "@/components/CommentsSection";
 import { revalidatePath } from "next/cache";
 
+export async function generateMetadata({ params }: any) {
+  const db = dbConnect();
+  const result = await db.query(
+    `SELECT posts.title, posts.content FROM posts WHERE posts.id = $1`,
+    [params.id]
+  );
+  const post = result.rows[0];
+  return {
+    title: `Post - ${post.title}`,
+    description: `Reaad all about ${post.body}`,
+  };
+}
+
 export default function PostPage({ params }: any) {
   // here i need to get the post from the database filtering by id
 

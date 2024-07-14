@@ -6,6 +6,12 @@ import { redirect } from "next/navigation";
 import { use, useEffect } from "react";
 import CategoriesForForm from "@/components/CategoriesForForm";
 
+export const metadata = {
+  title: "New Post - The best blog ever",
+  description:
+    "Create a new post on the best blog ever made in human history with Next.js",
+};
+
 export default function NewPostPage() {
   // have a function to handle the submit
   async function handleSubmit(formData: any) {

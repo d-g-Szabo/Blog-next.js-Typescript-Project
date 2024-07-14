@@ -2,6 +2,13 @@
 // we need some query strings to sort the data asc and desc
 import Link from "next/link";
 import dbConnect from "@/utils/dbConnection";
+
+export const metadata = {
+  title: "Posts - The best blog ever",
+  description:
+    "Posts page of the best blog ever made in human history with Next.js",
+};
+
 export default async function PostsPage({ searchParams }: any) {
   //here i need to get the posts from the database
   // Create a connection to the database
