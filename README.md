@@ -1,23 +1,8 @@
-Build a comment form
-Overview
+# week08-assignment
 
-You've built a simple blog, your task now is to embellish it. Use database relationships to add a comments table. Add categories and tags to your posts. Add a form to create new comments. Add an edit page that populates the form with the post data and allows you save changes to the database.
+Project: Database Driven Full Stack Next.js app!
 
-You can use Vercel Postgres or Supabase, so long as Postgres is the database.
-
-Example: Blog
-User Stories
-
-    🐿️ As a user, I want to browse a list of posts, sortable by ascending or descending order
-    🐿️ As a user, I want to be able to leave a comment sharing my thoughts on each post
-    Stretch goal:
-    🐿️ As a user, I want to see a list of categories, and click on a category to see a list of posts in that category
-
-Requirements
-
-IMPORTANT: You don't have to make a generic blog with posts. It can be ANYTHING! So long as you are able to comment on it, it could be recipes, reviews, products, job listings, podcast episodes, movies etc etc etc
-
-🎯 Created using create-next-app
+# Requirements:
 
 🎯 Design a SQL schema for a posts table, and a comments table that has a post_id column connecting it to the posts table.
 
@@ -30,7 +15,36 @@ IMPORTANT: You don't have to make a generic blog with posts. It can be ANYTHING!
 🎯 Refresh the /post/:postId route when adding a new comment, so the new comment is displayed on the page
 
 🎯 Add static and dynamic metadata to your pages
-Stretch Goals
+
+I met all the requirements for this assignment.
+
+# User Stories:
+
+    🐿️ As a user, I want to browse a list of posts, sortable by ascending or descending order
+    🐿️ As a user, I want to be able to leave a comment sharing my thoughts on each post
+    Stretch goal:
+    🐿️ As a user, I want to see a list of categories, and click on a category to see a list of posts in that category
+
+# Wireframe:
+
+![](https://github.com/d-g-Szabo/react-full-stack-app/blob/ca99ec2c35d12d46869c01f128fd5ed8eed837d0/client/public/database_driven_full_stack_react___express_app_wireframe1.jpg)
+![](https://github.com/d-g-Szabo/react-full-stack-app/blob/ca99ec2c35d12d46869c01f128fd5ed8eed837d0/client/public/database_driven_full_stack_react___express_app_wireframe2.jpg)
+![](https://github.com/d-g-Szabo/react-full-stack-app/blob/ca99ec2c35d12d46869c01f128fd5ed8eed837d0/client/public/database_driven_full_stack_react___express_app_wireframe3.jpg)
+![](https://github.com/d-g-Szabo/react-full-stack-app/blob/ca99ec2c35d12d46869c01f128fd5ed8eed837d0/client/public/database_driven_full_stack_react___express_app_wireframe4.jpg)
+
+# Component flow:
+
+![](https://github.com/d-g-Szabo/react-full-stack-app/blob/ca99ec2c35d12d46869c01f128fd5ed8eed837d0/client/public/database_driven_full_stack_react_express_app-component-tree.jpg)
+
+# Database schema:
+
+![](https://github.com/d-g-Szabo/react-full-stack-app/blob/ca99ec2c35d12d46869c01f128fd5ed8eed837d0/client/public/database_driven_full_stack_react___express_app-database-schema.jpg)
+
+# Trello project planning:
+
+![](https://github.com/d-g-Szabo/react-full-stack-app/blob/7ebfb55698386939315740c6befbb125b88703ae/client/public/database_driven_full_stack_react___express_app-trello.jpg)
+
+# Stretch Goals:
 
 🏹 Add a categories table to allow categorisation of posts at creation time using a dropdown menu. Add a /categories route that lists all categories, and a /categories/:id route that lists all posts in a category.
 
@@ -39,21 +53,19 @@ Stretch Goals
 🏹 Add a delete button to the post page that removes the post from the database.
 
 🏹 Add a new /posts/:id/comments/:id/edit route that allows editing a comment. Populate the form with the comment data, and save changes by updating the comment in the database with a server action.
-Please also provide an assignment reflection in your project README.md file.
-(Required)
-🎯 Please mention the requirements you met and which goals you achieved for this assignment.
 
-🎯 Were there any requirements or goals that you were not quite able to achieve?
+# Reflections:
 
-🎯 If so, could you please tell us what was it that you found difficult about these tasks?
+What went really well, and what could have gone better?
 
-(Optional)
-🏹 Feel free to add any other reflections you would like to share about your submission e.g.
+Making new pages and components was straightforward. I was trying to make a seed.ts file, but I couldn't make it work. I guess that's something that is no longer a thing without a server.
 
-    What went really well and what could have gone better?
+Useful external sources that helped me complete the assignment (e.g Youtube tutorials).
 
-    Detailing useful external sources that helped you complete the assignment (e.g Youtube tutorials).
+- none
 
-    Describing errors or bugs you encountered while completing your assignment.
+Errors or bugs I encountered while completing your assignment.
+I was trying to access the DB more than once on the same page to show the categories for the newPost page, but I got an error, so if I wanted to have more than one function accessing the DB, then I had to make a component inside that page so it would give me an error.
 
-    Requesting feedback about a specific part of your submission.
+Requesting feedback about a specific part of your submission:
+As I said above, I had to separate pages to make it work. Is there a way to just have one single page and do all of those things in one file, or the best way is to separate it into components as I did it?
