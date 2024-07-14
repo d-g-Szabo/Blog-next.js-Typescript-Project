@@ -1,22 +1,16 @@
 // need some navigation here
 //! remenber the metadata!
-import { dbConnect } from "@/utils/dbConnection";
+import dbConnect from "@/utils/dbConnection";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { use, useEffect } from "react";
+import CategoriesForForm from "@/components/CategoriesForForm";
 
 export default function NewPostPage() {
-  // async function getCategories() {
-  //   // we need to get the categories from the database
-  //   // Create a connection to the database
-  //   const db = dbConnect();
-  //   // Get the categories from the database
-  //   const categories = (await db.query(`SELECT * FROM categories`)).rows;
-  //   return categories;
-  // }
-
   // have a function to handle the submit
   async function handleSubmit(formData: any) {
+    // formData is the data from, in TypeScript I need to declare the type of the data that I'm going to receive, I used any here because I don't know the type of the data
+
     // Tell the component to use the server
     "use server";
     // get the data from the form
@@ -45,18 +39,7 @@ export default function NewPostPage() {
         <label htmlFor="content">Content</label>
         <textarea id="content" name="content" required />
         <label htmlFor="category_id">Category</label>
-        <select id="category_id" name="category_id" required>
-          {/* {categories.map((category, index) => {
-            return (
-              <option key={index} value={category.id}>
-                {category.name}
-              </option>
-            );
-          })} */}
-          <option value="1">Category 1</option>
-          <option value="2">Category 2</option>
-          <option value="3">Category 3</option>
-        </select>
+        <CategoriesForForm />
         {/* <Link to="/form/new-category" onClick={handleLinkClick}>
         New Category
       </Link> */}

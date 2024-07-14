@@ -1,7 +1,7 @@
 // we need some navigation here
 // we need some query strings to sort the data asc and desc
 import Link from "next/link";
-import { dbConnect } from "@/utils/dbConnection";
+import dbConnect from "@/utils/dbConnection";
 export default async function PostsPage({ searchParams }: any) {
   //here i need to get the posts from the database
   // Create a connection to the database
@@ -9,7 +9,7 @@ export default async function PostsPage({ searchParams }: any) {
   // Get the posts from the database
   const posts = (
     await db.query(
-      `SELECT posts.title, posts.content, posts.likes, categories.name AS "category", posts.id FROM posts, categories WHERE posts.category_id = categories.id ORDER BY posts.id`
+      `SELECT posts.title, categories.name AS "category", posts.id FROM posts, categories WHERE posts.category_id = categories.id ORDER BY posts.id`
     )
   ).rows;
 
